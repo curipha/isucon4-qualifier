@@ -11,6 +11,8 @@ sudo service nginx stop
 sudo kill -USR2 ${UNICORNPID}
 
 sudo rm -rf /var/log/nginx/*
+sudo rm -f /dev/shm/*.log
+sudo cp -f /dev/null /var/log/slowquery.log
 
 sudo service nginx start
 sudo service mysqld restart
