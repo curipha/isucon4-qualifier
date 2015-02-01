@@ -5,6 +5,7 @@ set -x
 
 UNICORNPID=`ps aux | grep -E '[u]nicorn master' | awk '{ print $2 }'`
 
+sudo sysctl -p
 
 sudo service nginx stop
 sudo kill -USR2 ${UNICORNPID}
