@@ -12,7 +12,7 @@ sudo kill -USR2 ${UNICORNPID}
 sudo rm -rf /var/log/nginx/*
 
 sudo service nginx start
-sudo service mysql restart
+sudo service mysqld restart
 
 sleep 2
 sudo kill -WINCH ${UNICORNPID}
