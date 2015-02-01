@@ -11,3 +11,6 @@ mysql -h ${myhost} -P ${myport} -u ${myuser} -e "DROP DATABASE IF EXISTS ${mydb}
 mysql -h ${myhost} -P ${myport} -u ${myuser} ${mydb} < sql/schema.sql
 mysql -h ${myhost} -P ${myport} -u ${myuser} ${mydb} < sql/dummy_users.sql
 mysql -h ${myhost} -P ${myport} -u ${myuser} ${mydb} < sql/dummy_log.sql
+
+mysql -h ${myhost} -P ${myport} -u ${myuser} ${mydb} -e "ALTER TABLE login_log ADD INDEX ip (ip)"
+mysql -h ${myhost} -P ${myport} -u ${myuser} ${mydb} -e "ALTER TABLE login_log ADD INDEX user_id (user_id)"
